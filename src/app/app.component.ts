@@ -11,18 +11,20 @@ export class AppComponent {
 
 
   constructor(private jobsService: JobsService) {
-    // this.jobsService.getUsaWorks().subscribe( (resp: any) => {
-    //   this.usaJobs = resp.SearchResult;
-    //   console.log(this.usaJobs.SearchResultItems);
-    // });
-    // this.jobsService.getTheMuse().subscribe( resp => {
-    //   console.log(resp);
-    // });
-    // this.jobsService.getJuju().subscribe( resp => {
-    //   console.log(resp);
-    // });
+    this.jobsService.getUsajobs().subscribe( (resp: any) => {
+      console.log('USAJOBS: ', resp);
+    });
+    this.jobsService.getTheMuse().subscribe( resp => {
+      console.log('THEMUSE: ', resp);
+    });
+    this.jobsService.getJuju().subscribe( resp => {
+      console.log('JUJU: ', resp);
+    });
     this.jobsService.getAdzuna().subscribe( resp => {
-      console.log(resp);
+      console.log('ADZUNA: ', resp);
+    });
+    this.jobsService.getWorksmobile().subscribe( resp => {
+      console.log('WORKSMOBILE: ', resp);
     });
   }
 }

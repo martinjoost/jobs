@@ -8,7 +8,7 @@ export class JobsService {
 
   constructor(private http: HttpClient) { }
 
-  getUsaWorks() {
+  getUsajobs() {
     const httpOptions = {
       headers: {
         Host: 'data.usajobs.gov',
@@ -31,10 +31,14 @@ export class JobsService {
   getAdzuna() {
     const httpOptions = {
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
       }
     };
     return this.http.get(`https://api.adzuna.com/v1/api/jobs/gb/search/10?app_id=f67c13ae&app_key=2b6b1ffb6fdacd0748081fdbc95b91b4`, httpOptions);
+  }
+
+  getWorksmobile(){
+    return this.http.get(`https://api.indeed.com/ads/apisearch`);
   }
 
 
